@@ -24,7 +24,9 @@
   },
   "homepage": "https://github.com/cesce/uuidv6-extension#readme",
   "dependencies": {
-    "uuid": "^9.0.0"
+    "@types/node": "^18.7.18",
+    "uuid": "^9.0.0",
+    "uuid-time": "^1.0.0"
   },
   "devDependencies": {
     "@types/uuid": "^8.3.4",
