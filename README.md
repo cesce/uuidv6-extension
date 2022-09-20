@@ -35,27 +35,27 @@ import * as uuid from "uuidv6-extension";
 console.log(`nil UUID: ${nil()}`);
 
 // Parse - Stringify
-const uuidV1 = v1();
-const uuidV1Parse = parse(uuidV1);
-const uuidV1Str = stringify(uuidV1Parse);
-const uuidV6 = v6();
+const uuidV1 = uuid.v1();
+const uuidV1Parse = uuid.parse(uuidV1);
+const uuidV1Str = uuid.stringify(uuidV1Parse);
+const uuidV6 = uuid.v6();
 
 console.log(`UUID v1: ${uuidV1}`);
 console.log(`UUID v1 stringified: ${uuidV1Str}`);
 
 // Validate
 const invalid = "ad333a";
-console.log(validate(uuidV1));
-console.log(validate(invalid));
-console.log(validateV6(uuidV6));
+console.log(uuid.validate(uuidV1));
+console.log(uuid.validate(invalid));
+console.log(uuid.validateV6(uuidV6));
 
 // Version
-console.log(version(uuidV1));
-console.log(versionV6(uuidV1));
-console.log(versionV6(uuidV6));
+console.log(uuid.version(uuidV1));
+console.log(uuid.versionV6(uuidV1));
+console.log(uuid.versionV6(uuidV6));
 
 // UUID to Date
-console.log(uuidToDate(uuidV1));
+console.log(uuid.uuidToDate(uuidV1));
 ```
 
 ## To be done
