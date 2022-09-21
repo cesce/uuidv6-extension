@@ -73,7 +73,19 @@ console.log(uuidToDateV6(uuidV6Ordered));
 
 ## To be done
 
+Implementation
+
+- [ ] Ordered V6 to V1
+
+Support for versions:
+
+- [ ] V3
+- [ ] V5
+
 Test
+
+- [ ] Unit test
+- [ ] Performance test
 
 ## License
 
