@@ -12,19 +12,20 @@ npm install uuidv6-extension
 
 ## API
 
-| Method             | Return                                                     | Comments                               |
-| ------------------ | ---------------------------------------------------------- | -------------------------------------- |
-| uuid.nil( )        | The nil UUID string (all zeros)                            | '00000000-0000-0000-0000-000000000000' |
-| uuid.parse( )      | Convert UUID string to array of bytes                      | ArrayLike<number>                      |
-| uuid.stringify( )  | Convert array of bytes to UUID string                      | '46ed45e0-392d-11ed-9370-0800200c9a66' |
-| uuid.validate( )   | Test a string to see if it is a valid UUID not v6          | Boolean                                |
-| uuid.validateV6( ) | Test a string to see if it is a valid UUID v6              | Boolean                                |
-| uuid.version( )    | Detect RFC version of a UUID not v6                        | Number                                 |
-| uuid.versionV6( )  | Detect RFC version of a UUID for v1 to v6                  | Number                                 |
-| uuid.uuidToDate( ) | Convert a UUID V1 to a Date Object                         | Date                                   |
-| uuid.v1( )         | Create a version 1 (timestamp) UUID                        | '5714f720-1268-11e7-a24b-96d95aa38c32' |
-| uuid.v4( )         | Create a version 4 (random) UUID                           | '81d86d15-822f-4f7b-b091-0a1f9392d379' |
-| uuid.v6( )         | Create a version 6 (ordered timestamp) UUID from version 1 | '1e712685-714f-6720-a23a-c90103f70be6' |
+| Method               | Return                                                     | Comments                               |
+| -------------------- | ---------------------------------------------------------- | -------------------------------------- |
+| uuid.nil( )          | The nil UUID string (all zeros)                            | '00000000-0000-0000-0000-000000000000' |
+| uuid.parse( )        | Convert UUID string to array of bytes                      | ArrayLike < number >                   |
+| uuid.stringify( )    | Convert array of bytes to UUID string                      | '46ed45e0-392d-11ed-9370-0800200c9a66' |
+| uuid.validate( )     | Test a string to see if it is a valid UUID not v6          | Boolean                                |
+| uuid.validateV6( )   | Test a string to see if it is a valid UUID v6              | Boolean                                |
+| uuid.version( )      | Detect RFC version of a UUID not v6                        | Number                                 |
+| uuid.versionV6( )    | Detect RFC version of a UUID for v1 to v6                  | Number                                 |
+| uuid.uuidToDate( )   | Convert a UUID V1 to a Date Object                         | Date                                   |
+| uuid.uuidToDateV6( ) | Convert a UUID V6 to a Date Object                         | Date                                   |
+| uuid.v1( )           | Create a version 1 (timestamp) UUID                        | '5714f720-1268-11e7-a24b-96d95aa38c32' |
+| uuid.v4( )           | Create a version 4 (random) UUID                           | '81d86d15-822f-4f7b-b091-0a1f9392d379' |
+| uuid.v6( )           | Create a version 6 (ordered timestamp) UUID from version 1 | '1e712685-714f-6720-a23a-c90103f70be6' |
 
 ## Usage
 
@@ -59,11 +60,6 @@ console.log(uuid.uuidToDate(uuidV1));
 ```
 
 ## To be done
-
-Functions:
-
-- uuidV6toV1()
-- uuidToDateV6()
 
 Test
 

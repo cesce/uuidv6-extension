@@ -66,6 +66,23 @@ export function uuidToDate(uuidData: string): Date {
   return get_date_obj(uuidData);
 }
 
+export function uuidToDateV6(uuidData: string): Date {
+  var GREGORIAN_OFFSET = 122192920000000000;
+
+  function get_time_int(uuid_str: string): number {
+    var uuid_arr = uuid_str.replaceAll("-", "");
+    return parseInt(uuid_arr);
+  }
+
+  function get_date_obj(uuid_str: string): Date {
+    var int_time = get_time_int(uuid_str) - GREGORIAN_OFFSET;
+    var int_millisec = Math.floor(int_time / 10000);
+    return new Date(int_millisec);
+  }
+
+  return new Date();
+}
+
 // Create a version 1 (timestamp) UUID
 export function v1(): string {
   return uuid.v1();
