@@ -12,20 +12,23 @@ npm install uuidv6-extension
 
 ## API
 
-| Method               | Return                                                     | Comments                               |
-| -------------------- | ---------------------------------------------------------- | -------------------------------------- |
-| uuid.nil( )          | The nil UUID string (all zeros)                            | '00000000-0000-0000-0000-000000000000' |
-| uuid.parse( )        | Convert UUID string to array of bytes                      | ArrayLike < number >                   |
-| uuid.stringify( )    | Convert array of bytes to UUID string                      | '46ed45e0-392d-11ed-9370-0800200c9a66' |
-| uuid.validate( )     | Test a string to see if it is a valid UUID not v6          | Boolean                                |
-| uuid.validateV6( )   | Test a string to see if it is a valid UUID v6              | Boolean                                |
-| uuid.version( )      | Detect RFC version of a UUID not v6                        | Number                                 |
-| uuid.versionV6( )    | Detect RFC version of a UUID for v1 to v6                  | Number                                 |
-| uuid.uuidToDate( )   | Convert a UUID V1 to a Date Object                         | Date                                   |
-| uuid.uuidToDateV6( ) | Convert a UUID V6 to a Date Object                         | Date                                   |
-| uuid.v1( )           | Create a version 1 (timestamp) UUID                        | '5714f720-1268-11e7-a24b-96d95aa38c32' |
-| uuid.v4( )           | Create a version 4 (random) UUID                           | '81d86d15-822f-4f7b-b091-0a1f9392d379' |
-| uuid.v6( )           | Create a version 6 (ordered timestamp) UUID from version 1 | '1e712685-714f-6720-a23a-c90103f70be6' |
+| Method                | Return                                                     | Comments                               |
+| --------------------- | ---------------------------------------------------------- | -------------------------------------- |
+| uuid.nil( )           | The nil UUID string (all zeros)                            | '00000000-0000-0000-0000-000000000000' |
+| uuid.parse( )         | Convert UUID string to array of bytes (v1 to v4)           | ArrayLike < number >                   |
+| uuid.stringify( )     | Convert array of bytes to UUID string (v1 to v4)           | '46ed45e0-392d-11ed-9370-0800200c9a66' |
+| uuid.validate( )      | Test a string to see if it is a valid UUID not v6          | Boolean                                |
+| uuid.validateV6( )    | Test a string to see if it is a valid UUID v6 (reg. exp.)  | Boolean                                |
+| uuid.validateAll( )   | Validate a string with UUID v1, v3, v5 and v6              | Boolean                                |
+| uuid.version( )       | Detect RFC version of a UUID not v6                        | Number                                 |
+| uuid.versionAll( )    | Detect RFC version of a UUID for v1, v4 and v6             | Number                                 |
+| uuid.uuidToDate( )    | Convert a UUID V1 to a Date Object                         | Date                                   |
+| uuid.uuidToDateV6( )  | Convert a UUID V6 to a Date Object                         | Date                                   |
+| uuid.v1( )            | Create a version 1 (timestamp) UUID                        | '5714f720-1268-11e7-a24b-96d95aa38c32' |
+| uuid.v4( )            | Create a version 4 (random) UUID                           | '81d86d15-822f-4f7b-b091-0a1f9392d379' |
+| uuid.v6( )            | Create a version 6 (ordered MAC) UUID from version 1       | '1e712685-714f-6720-a23a-c90103f70be6' |
+| uuid.v6Ordered( )     | Create a version 6 (ordered timestamp) UUID from version 1 | '1e712685-714f-6720-a23a-c90103f70be6' |
+| uuid.v6OrderedToV1( ) | Get UUID V1 from V& ordered timestamp                      | '1e712685-714f-6720-a23a-c90103f70be6' |
 
 ## Usage
 
@@ -40,6 +43,7 @@ const uuidV1 = uuid.v1();
 const uuidV1Parse = uuid.parse(uuidV1);
 const uuidV1Str = uuid.stringify(uuidV1Parse);
 const uuidV6 = uuid.v6();
+const uuidV6Ordered = uuid.v6Ordered();
 
 console.log(`UUID v1: ${uuidV1}`);
 console.log(`UUID v1 stringified: ${uuidV1Str}`);
@@ -57,6 +61,12 @@ console.log(uuid.versionV6(uuidV6));
 
 // UUID to Date
 console.log(uuid.uuidToDate(uuidV1));
+
+// UUID V6 with ordered timestamp
+console.log(uuid.v6Ordered());
+
+// UUID V6 timestamp
+console.log(uuidToDateV6(uuidV6Ordered));
 ```
 
 ## To be done

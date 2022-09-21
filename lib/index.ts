@@ -22,10 +22,16 @@ export function validate(uuidData: string): boolean {
 }
 
 // Test a string to see if it is a valid UUID v6
-export function validateV6(uuiDate: string): boolean {
+export function validateV6(uuiData: string): boolean {
   const regExpUuid = /^[a-z,0-9,-]{36,36}$/;
 
-  return regExpUuid.test(uuiDate);
+  return regExpUuid.test(uuiData);
+}
+
+export function validateAll(uuidData: string): boolean {
+  const validation = validate(uuidData) || validateV6(uuidData);
+
+  return validation;
 }
 
 // Detect RFC version of a UUID not for v6
@@ -34,7 +40,7 @@ export function version(uuidData: string): number {
 }
 
 // Detect RFC version of a UUID for v1 to v6
-export function versionV6(uuidData: string): number {
+export function versionAll(uuidData: string): number {
   let version = 0;
 
   if (validateV6(uuidData)) {
@@ -124,4 +130,20 @@ export function v6(opts: any = {}): string {
   }
 
   return generateId();
+}
+
+export function v6Ordered(): string {
+  const sourceV1 = v1();
+
+  const highDate = sourceV1.substring(15, 18);
+  const midDate = sourceV1.substring(9, 13);
+  const firstQ = sourceV1.substring(1, 5);
+  const secondQ = sourceV1.substring(5, 8);
+  const thirdQ = sourceV1.substring(19, 23);
+  const suffix = sourceV1.substring(24, 36);
+  const uuidTimeStamp = `${highDate}${midDate}${sourceV1.charAt(
+    0
+  )}-${firstQ}-6${secondQ}-${thirdQ}-${suffix}`;
+
+  return uuidTimeStamp;
 }
