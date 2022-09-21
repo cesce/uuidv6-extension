@@ -69,5 +69,8 @@ Test
 
 ## License
 
-- This module is licensed under the [ISC License](https://github.com/kurttheviking/uuid-with-v6-js/blob/master/LICENSE).
-- The underlying uuid module is licensed under the [MIT License](https://github.com/kelektiv/node-uuid/blob/master/LICENSE.md).
+- The underlying uuid modules and code licenses are:
+
+  - The underlying code from uuid-with-v6-js is licensed under the [ISC License](https://github.com/kurttheviking/uuid-with-v6-js/blob/master/LICENSE).
+  - The underlying uuid module is licensed under the [MIT License](https://github.com/kelektiv/node-uuid/blob/master/LICENSE.md).
+  - The underlying code from UUID_to_Date is licensed under the [Apache License 2.0] (https://github.com/xehrad/UUID_to_Date/blob/master/LICENSE)
