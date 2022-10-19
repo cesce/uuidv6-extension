@@ -1,6 +1,6 @@
 {
   "name": "uuidv6-extension",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "UUID version 6 extension for creating time based in RFC UUID v1 for NodeJS.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -30,6 +30,6 @@
   },
   "devDependencies": {
     "@types/uuid": "^8.3.4",
-    "typescript": "^4.8.3"
+    "typescript": "^4.8.4"
   }
 }
