@@ -115,7 +115,7 @@ export function v6(opts: any = {}): string {
 
     const prefixFormatted = `${prefix.substring(0, 8)}-${prefix.substring(
       8,
-      4
+      12
     )}-${prefix.substring(12)}`;
 
     const random = crypto.randomBytes(8).toString("hex");
