@@ -4,6 +4,8 @@ UUID version 6 extension for creating time based in RFC UUID v1 for NodeJS.
 
 This is an extension of the existing library: <https://github.com/uuidjs/uuid>
 
+**NOTE:** this repository has been archived because the base library (<https://github.com/uuidjs/uuid>) already supports UUID version 6 (version 7 Unix Epoc time-based also supported).
+
 ## Install
 
 ```bash
